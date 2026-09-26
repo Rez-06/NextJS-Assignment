@@ -5,6 +5,9 @@ import { PlanProvider } from "@/context/PlanContext";
 import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-display" });
 
