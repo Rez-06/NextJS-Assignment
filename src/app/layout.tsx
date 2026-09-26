@@ -3,8 +3,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { Oswald } from "next/font/google";
 import { PlanProvider } from "@/context/PlanContext";
 import { ToastContainer } from "react-toastify";
-//import Navbar from "@/components/Navbar";
-//import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-display" });
 
@@ -13,9 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${oswald.variable} bg-black text-white min-h-screen flex flex-col`}>
         <PlanProvider>
-          {/* <Navbar /> */}
+          <Navbar />
           <main className="flex-1">{children}</main>
-          {/* <Footer /> */}
+          <Footer />
           <ToastContainer theme="dark" position="bottom-right" />
         </PlanProvider>
       </body>
