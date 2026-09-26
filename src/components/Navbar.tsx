@@ -9,13 +9,17 @@ export default function Navbar() {
   const pathname = usePathname();
   const { plan, saved } = usePlan();
 
-  const linkClass = (href: string) =>
-    `text-sm font-medium ${pathname === href ? "text-[#ccff00]" : "text-white/70 hover:text-white"}`;
+ const linkClass = (href: string) =>
+  `text-sm font-medium px-4 py-2 rounded-full ${
+    pathname === href
+      ? "text-[#ccff00] bg-white/10"
+      : "text-white/70 hover:text-white"
+  }`;
 
   return (
     <header className="sticky top-0 z-50 bg-black/95 border-b border-white/10">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <Link href="/" className="font-display font-bold text-lg tracking-wide">FITLOG</Link>
+        <Link href="/" className="flex font-display font-bold text-lg tracking-wide"><img src="/logo.png" alt="logo" />FITLOG</Link>
         <div className="hidden md:flex gap-8">
           <Link href="/" className={linkClass("/")}>Workouts</Link>
           <Link href="/my-plan" className={linkClass("/my-plan")}>My Plan</Link>
