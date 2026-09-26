@@ -15,18 +15,17 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-black/95 border-b border-white/10">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <Link href="/" className="font-display font-bold text-lg tracking-wide">
+        <Link href="/" className=" flex font-display font-bold text-lg tracking-wide gap-2">
+          <img src="/logo.png" alt="logo" className="h-7 w-7" />
           FITLOG
         </Link>
 
-        
         <div className="hidden md:flex gap-8">
           <Link href="/" className={linkClass("/")}>Workouts</Link>
           <Link href="/my-plan" className={linkClass("/my-plan")}>My Plan</Link>
         </div>
 
         <div className="flex items-center gap-3">
-          {/* Badges — always visible */}
           <div className="flex items-center gap-3 text-sm">
             <Link href="/my-plan" className="px-3 py-1 rounded-full bg-[#ccff00] text-black font-semibold">
               Plan {plan.length}
@@ -36,7 +35,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-white p-1"
@@ -58,7 +56,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      
       {menuOpen && (
         <div className="md:hidden border-t border-white/10 px-6 py-4 flex flex-col gap-4">
           <Link href="/" className={linkClass("/")} onClick={() => setMenuOpen(false)}>

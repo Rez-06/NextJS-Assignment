@@ -2,14 +2,10 @@ import { notFound } from "next/navigation";
 import DetailActions from "@/components/DetailActions";
 import { Workout } from "@/context/PlanContext";
 
-export default async function WorkoutDetail({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function WorkoutDetail({params,}: {params: Promise<{ id: string }>;}) {
   const { id } = await params;
-
-  const res = await fetch("https://api.abcz.workers.dev/api/fitlog", { cache: "no-store" });
+  
+  const res = await fetch("https://api.api-store.workers.dev/api/fitlog", { cache: "no-store" });
   const workouts: Workout[] = await res.json();
   const workout = workouts.find((w) => w.id === Number(id));
 

@@ -3,7 +3,7 @@ import LibraryGrid from "@/components/LibraryGrid";
 import { Workout } from "@/context/PlanContext";
 
 export default async function Home() {
-  const res = await fetch("https://api.abcz.workers.dev/api/fitlog", { cache: "no-store" });
+  const res = await fetch("https://api.api-store.workers.dev/api/fitlog", { cache: "no-store" });
   const workouts: Workout[] = await res.json();
 
   return (

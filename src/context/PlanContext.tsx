@@ -62,7 +62,7 @@ export function PlanProvider({children} : {children : ReactNode}){
     }
 
     const removeFromSaved = (id:number)=>{
-        setSaved(plan.filter((w)=> w.id !=id));
+        setSaved(saved.filter((w)=> w.id !=id));
         toast.info("Removed from saved");
         
     };
